@@ -11,7 +11,7 @@ Issues based on operating system and processor family with the
 following `.gail-labels` file:
 
 ```
- This is a list of labels to be used for automatic tagging
+# This is a list of labels to be used for automatic tagging
 # of github issues using gail: https://github.com/atgreen/gail
 
 # Main categories
