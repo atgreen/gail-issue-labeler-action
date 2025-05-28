@@ -1,5 +1,6 @@
 name: "gail-issue-labeler"
 description: "Label new issues using GAIL"
+author: 'Anthony Green'
 
 inputs:
   llm_api_key:
