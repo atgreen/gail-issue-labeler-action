@@ -53,4 +53,4 @@ runs:
           < action-issue.txt
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
-        OPENAI_API_KEY: ${{ inputs.llm_api_key }}
+        OPENAI_KEY: ${{ inputs.llm_api_key }}
