@@ -59,7 +59,7 @@ XTENSA
 To use this Action, simply create a `.gail-labels` file and copy
 something like the following into `.github/workflows/label-new-issues.yaml`:
 
-``
+```
 on:
   issues:
     types: [opened]
@@ -75,7 +75,7 @@ jobs:
         with:
           llm_api_key: ${{ secrets.OPENAI_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-``
+```
 
 <!--doc_begin-->
 ### Inputs
