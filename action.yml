@@ -11,19 +11,24 @@ permissions:
 
 runs:
   using: "composite"
+
+  secrets:
+    GITHUB_TOKEN: GITHUB_TOKEN
+
   steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Download latest GAIL release
       id: download-gail
+      shell: bash
       run: |
         # fetch latest release metadata
         LATEST=$(curl -s https://api.github.com/repos/atgreen/gail/releases/latest)
         # pull out the URL for the linux binary
         URL=$(echo "$LATEST" \
-          | jq -r '.assets[] 
-                    | select(.name == "gail-linux-x86_64") 
+          | jq -r '.assets[]
+                    | select(.name == "gail-linux-x86_64")
                     | .browser_download_url')
         wget "$URL" -O gail-linux-x86_64
         chmod +x gail-linux-x86_64
@@ -31,6 +36,7 @@ runs:
         echo "GAIL_PATH=$(pwd)/gail-linux-x86_64" >> $GITHUB_ENV
 
     - name: Run GAIL on the new issue
+      shell: bash
       run: |
         cat <<EOF > action-issue.txt
         Issue title: ${{ github.event.issue.title }}
