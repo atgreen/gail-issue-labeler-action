@@ -1,5 +1,5 @@
 name: "gail-issue-labeler"
-description: "Label new issues using GAIL"
+description: "Label new issues using LLMs with gail"
 author: 'Anthony Green'
 
 inputs:
